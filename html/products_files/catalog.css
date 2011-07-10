@@ -1,0 +1,224 @@
+@import url(http://heroku-assets.s3.amazonaws.com/stylesheets/fonts.css);
+html a.remove, body a.remove { -moz-border-radius: 14px; -webkit-border-radius: 14px; -moz-box-shadow: 2px 2px 2px #111111; -webkit-box-shadow: 2px 2px 2px #111111; background-color: #9e8aff; text-shadow: #c9c3e6 0px 0px 2px; color: #16153b; font-size: 14px; background-image: url(/images/button-smooth.png); background-repeat: repeat-x; background-position: center bottom; padding: 7px 20px 7px 20px; font-weight: bold; cursor: pointer; -moz-border-radius: 10px; -webkit-border-radius: 10px; padding: 0 8px 2px 8px; font-size: 18px; background-color: #a11c39; color: #3b0000; text-shadow: #eeb4b5 0px 0px 2px; }
+html a.remove:hover, body a.remove:hover { background-color: #d44f6c; text-decoration: none; }
+html input.text, body input.text { font-size: 12px; padding: 7px; -moz-border-radius: 3px; -webkit-border-radius: 3px; background-color: #c9c3e6; }
+html input.checkbox, body input.checkbox { margin-right: 5px; }
+html input.submit, body input.submit { -moz-border-radius: 14px; -webkit-border-radius: 14px; -moz-box-shadow: 2px 2px 2px #111111; -webkit-box-shadow: 2px 2px 2px #111111; background-color: #9e8aff; text-shadow: #c9c3e6 0px 0px 2px; color: #16153b; font-size: 14px; background-image: url(/images/button-smooth.png); background-repeat: repeat-x; background-position: center bottom; padding: 7px 20px 7px 20px; font-weight: bold; cursor: pointer; }
+html input.submit:hover, body input.submit:hover { background-color: #c9c3e6; }
+html input.submit.disabled, body input.submit.disabled { background-color: #555555; text-shadow: #aaaaaa 0px 0px 2px; color: #0a0c0c; }
+html input.submit.add, body input.submit.add { -moz-border-radius: 10px; -webkit-border-radius: 10px; padding: 2px 7px 3px 7px; font-size: 14px; background-color: #a3ba5f; color: #353a1e; }
+html input.submit.add:hover, body input.submit.add:hover { background-color: #cade74; }
+html input.destroy, body input.destroy { -moz-border-radius: 14px; -webkit-border-radius: 14px; -moz-box-shadow: 2px 2px 2px #111111; -webkit-box-shadow: 2px 2px 2px #111111; font-weight: bold; color: #0e0909; text-shadow: #999999 0px 0px 2px; background-color: #666666; background-image: url(/images/button-smooth-red.png); background-repeat: repeat-x; background-position: center bottom; cursor: pointer; margin-bottom: 2px; }
+html input.destroy:hover, body input.destroy:hover { background-color: #888888; }
+html input.selectbox, body input.selectbox { padding-right: 25px; position: relative; background-image: url(/images/form-select-closed.png); background-position: right center; background-repeat: no-repeat; }
+html .selectbox-wrapper, html .ac_results, body .selectbox-wrapper, body .ac_results { position: absolute; -moz-box-shadow: 2px 2px 2px #111111; -webkit-box-shadow: 2px 2px 2px #111111; z-index: 12; background-color: #c2e3f3; color: #27264c; padding-bottom: 3px; max-height: 150px; overflow: auto; -moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px; -moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px; }
+html .selectbox-wrapper li, html .ac_results li, body .selectbox-wrapper li, body .ac_results li { padding: 5px 5px 5px 8px; font-size: 12px; margin-bottom: -3px; }
+html .selectbox-wrapper li strong, html .ac_results li strong, body .selectbox-wrapper li strong, body .ac_results li strong { font-weight: normal; }
+html .selectbox-wrapper li.selected, html .ac_results li.selected, body .selectbox-wrapper li.selected, body .ac_results li.selected { color: #2a76b0; font-weight: bold; }
+html .selectbox-wrapper li.current, html .ac_results li.current, body .selectbox-wrapper li.current, body .ac_results li.current { background-color: #88b9f7; }
+html .selectbox-wrapper li.current:last-child, html .ac_results li.current:last-child, body .selectbox-wrapper li.current:last-child, body .ac_results li.current:last-child { -moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px; -moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px; }
+html select, body select { border: none; background-color: #c9c3e6; margin-top: 0; margin-left: 0; padding: 7px; height: 28px; font-size: 12px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+html .notice, body .notice { color: white; padding: 10px 10px 8px 10px; margin-bottom: 15px; background-color: #5987a0; background-image: url(/images/notice-bkg.png); background-repeat: repeat-x; background-position: center bottom; -moz-border-radius: 7px; -webkit-border-radius: 7px; -moz-box-shadow: 3px 3px 4px #111111; -webkit-box-shadow: 3px 3px 4px #111111; }
+html .notice a, body .notice a { color: white; text-decoration: underline; }
+html .notice em, body .notice em { padding: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; }
+html .notice h3, body .notice h3 { line-height: 30px; padding-top: 1px; background-image: url(/images/notice-icon-35x35.png); background-position: left top; background-repeat: no-repeat; padding-left: 35px; }
+html .notice.success, body .notice.success { background-color: #7c984c; background-image: url(/images/notice-success-bkg.png); }
+html .notice.success em, body .notice.success em { background-color: #d07872; color: #40111f; }
+html .notice.success h3, body .notice.success h3 { background: none; padding-left: 10px; line-height: 24px; }
+html .notice.error, body .notice.error { background-color: #a11c39; background-image: url(/images/notice-error-bkg.png); }
+html .notice.error em, body .notice.error em { background-color: #d07872; color: #40111f; }
+html .notice.error h3, body .notice.error h3 { background-image: url(/images/notice-error-icon-35x35.png); background-position: left top; background-repeat: no-repeat; padding-left: 40px; }
+html form .overview, body form .overview { padding: 20px; }
+html form .notice, body form .notice { margin-right: 20px; margin-left: 20px; margin-bottom: 20px; }
+html form fieldset, body form fieldset { overflow: auto; border: none; border-top-width: 4px; border-top-color: #1c2322; border-top-style: solid; padding: 20px 30px 15px 30px; }
+html form fieldset:first-child, body form fieldset:first-child { border-top-style: none; }
+html form fieldset:last-child, body form fieldset:last-child { padding-bottom: 0; }
+html form fieldset.active, body form fieldset.active { background-color: #1c2322; }
+html form fieldset p.overview, body form fieldset p.overview { padding: 0 0 20px 0; }
+html form fieldset legend, html form fieldset h3, body form fieldset legend, body form fieldset h3 { font-family: "HybreaLight", sans-serif; letter-spacing: 1px; letter-spacing: 1px; color: #8d79f2; padding-right: 1em; }
+html form fieldset h3, body form fieldset h3 { margin-bottom: 20px; padding-right: 0; }
+html form fieldset .row, body form fieldset .row { clear: both; overflow: hidden; }
+html form fieldset .row:last-child, body form fieldset .row:last-child { padding-bottom: 0; }
+html form fieldset .row .field, body form fieldset .row .field { float: left; margin-right: 20px; }
+html form fieldset .row .field:last-child, body form fieldset .row .field:last-child { margin-right: 0px; }
+html form fieldset .formError, body form fieldset .formError { margin: 0; padding-top: 7px; padding-left: 7px; color: #e1b5b6; font-size: 12px; display: block; clear: both; }
+html form fieldset .field, body form fieldset .field { margin-bottom: 15px; }
+html form fieldset .field label, body form fieldset .field label { margin-bottom: 2px; font-size: 12px; }
+html form fieldset .field label, html form fieldset .field input, html form fieldset .field .formError, body form fieldset .field label, body form fieldset .field input, body form fieldset .field .formError { display: block; }
+html form fieldset .field .formError, body form fieldset .field .formError { padding-top: 2px; padding-left: 0; }
+html form fieldset .field.active select, html form fieldset .field.active .text, body form fieldset .field.active select, body form fieldset .field.active .text { background-color: #c2e3f3; -moz-box-shadow: 2px 2px 2px #111111; -webkit-box-shadow: 2px 2px 2px #111111; }
+html form fieldset .field.active .selectbox, body form fieldset .field.active .selectbox { background-image: url(/images/form-select-active-closed.png); }
+html form fieldset .field.active .selectbox.open, body form fieldset .field.active .selectbox.open { background-image: url(/images/form-select-active-open.png); -moz-border-radius-bottomright: 0; -webkit-border-bottom-right-radius: 0; -moz-border-radius-bottomleft: 0; -webkit-border-bottom-left-radius: 0; }
+html form fieldset .field.error, body form fieldset .field.error { color: #d07872; }
+html form fieldset .field.error select, html form fieldset .field.error .text, body form fieldset .field.error select, body form fieldset .field.error .text { background-color: #d07872; }
+html form fieldset .field.error .selectbox, body form fieldset .field.error .selectbox { background-image: url(/images/form-select-error-closed.png); }
+html form fieldset .field.error .selectbox.open, body form fieldset .field.error .selectbox.open { background-image: url(/images/form-select-error-open.png); }
+html form fieldset .field.error .selectbox-wrapper, body form fieldset .field.error .selectbox-wrapper { background-color: #d07872; }
+html form fieldset .field.error.active select, html form fieldset .field.error.active .text, body form fieldset .field.error.active select, body form fieldset .field.error.active .text { background-color: #e1b5b6; }
+html form fieldset .field.error.active .selectbox, body form fieldset .field.error.active .selectbox { background-image: url(/images/form-select-error-active-closed.png); }
+html form fieldset .field.error.active .selectbox.open, body form fieldset .field.error.active .selectbox.open { background-image: url(/images/form-select-error-active-open.png); }
+html form fieldset .field.error.active .selectbox-wrapper, html form fieldset .field.error.active .ac_results, body form fieldset .field.error.active .selectbox-wrapper, body form fieldset .field.error.active .ac_results { background-color: #e1b5b6; }
+html form fieldset .field.error.active .selectbox-wrapper .selected, html form fieldset .field.error.active .ac_results .selected, body form fieldset .field.error.active .selectbox-wrapper .selected, body form fieldset .field.error.active .ac_results .selected { color: #a11c39; }
+html form fieldset .field.error.active .selectbox-wrapper .current, html form fieldset .field.error.active .ac_results .current, body form fieldset .field.error.active .selectbox-wrapper .current, body form fieldset .field.error.active .ac_results .current { background-color: #d07872; color: #2a0b14; }
+html form p.submit, html form fieldset.submit, body form p.submit, body form fieldset.submit { text-align: right; padding: 20px 30px 20px 30px; }
+html form p.submit .confirmation, html form fieldset.submit .confirmation, body form p.submit .confirmation, body form fieldset.submit .confirmation { text-align: left; }
+html form p.submit p, html form fieldset.submit p, body form p.submit p, body form fieldset.submit p { float: left; line-height: 30px; }
+
+html body #content form { padding: 0 !important; }
+html body #content form.panel-body { padding: 0 !important; }
+
+#heroku-header { background-color: #1d2d32; border-bottom-color: #223b40; }
+#heroku-header #heroku-logo a { background-image: url(/images/logo.png); }
+#heroku-header ul#heroku-account-nav li, #heroku-header ul#heroku-section-nav li { border-left-color: #50606c; }
+#heroku-header ul#heroku-account-nav li a, #heroku-header ul#heroku-section-nav li a { color: #d3e2eb; }
+#heroku-header ul#heroku-account-nav li a#heroku-header-link-addons, #heroku-header ul#heroku-section-nav li a#heroku-header-link-addons { color: #bff740; }
+#heroku-header ul#heroku-account-nav li a#heroku-header-link-addons:hover, #heroku-header ul#heroku-section-nav li a#heroku-header-link-addons:hover { color: #bff740; }
+#heroku-header ul#heroku-account-nav { background-color: #192026; }
+#heroku-header ul#heroku-account-nav li a { color: #45a4ff; }
+#heroku-header ul#heroku-account-nav li a:hover { color: #74d0f4; }
+#heroku-header ul#heroku-account-nav li a.active { color: #bff740; }
+#heroku-header ul#heroku-account-nav li a.active:hover { color: #bff740; }
+
+html, body { margin: 0; padding: 0; border: 0; font-weight: inherit; font-style: inherit; font-size: 100%; font-family: arial, helvetica, sans-serif; vertical-align: baseline; margin: 0; padding: 0; background-color: #232f32; color: #999999; }
+html .container, body .container { min-width: 970px; }
+
+.content a { text-decoration: none; color: #cff0ff; }
+.content p, .content ul { font-size: 13px; color: #a9c1cc; line-height: 20px; }
+.content p a, .content ul a { color: #cff0ff; }
+.content ul { list-style-type: square; margin-left: 0; padding-left: 2em; }
+.content h1, .content h2, .content h3, .content h4 { margin: 0; padding: 0; font-family: "CorbelRegular", sans-serif; font-weight: normal; color: #cff0ff; }
+.content h1 a, .content h2 a, .content h3 a, .content h4 a { color: #cff0ff; }
+
+.ribbon span { width: 130px; display: block; position: absolute; left: -26px; top: 30px; -moz-transform: rotate(-45deg); -webkit-transform: rotate(-45deg); -moz-box-shadow: 0 0 3px #171e20; -webkit-box-shadow: 0 0 3px #171e20; font-weight: bold; font-size: 11px; opacity: 0.9; text-transform: uppercase; text-align: center; }
+.ribbon.soon span { background-color: #1c1c1c; background: -webkit-gradient(linear, left bottom, left top, from(#343434), to(#434343)); color: #999999; border-top: 1px solid #6f6f6f; border-bottom: 1px solid #5f5f5f; }
+.ribbon.private_beta span { background-color: #1c2325; background: -webkit-gradient(linear, left bottom, left top, from(#344044), to(#435258)); color: #b4c8cf; border-top: 1px solid #6f8892; border-bottom: 1px solid #5f747d; }
+.ribbon.beta span { background-color: #1b3036; background: -webkit-gradient(linear, left bottom, left top, from(#30444b), to(#4e6f7a)); color: #cee2ec; border-top: 1px solid #6792a1; border-bottom: 1px solid #45626c; }
+
+.clear { clear: both; }
+
+.index #preload { display: none; }
+.index .content { padding-bottom: 30px; }
+.index .content .addons, .index .content .intro { width: 920px; margin: 0 auto; clear: both; }
+.index .content .addons-wrapper, .index .content .intro-wrapper { clear: both; }
+.index .content .intro-wrapper { background-image: url(/images/addon-intro-texture-background.png); background-repeat: repeat; background-position: center top; background-color: #222d31; border-bottom: 1px solid #25353a; }
+.index .content .intro-wrapper .intro-shadow { background-image: url(/images/addon-intro-background.png); background-repeat: repeat-x; background-position: left top; }
+.index .content .addons-wrapper { background-image: url(/images/addon-content-background.png); background-repeat: repeat-x; background-position: left top; }
+.index .content .intro-nav { background-color: #1b2429; border-top: 1px solid #111417; border-bottom: 1px solid #242e34; text-align: right; }
+.index .content .intro-nav .intro-nav-wrapper { width: 970px; margin: 0 auto; }
+.index .content .intro-nav a { display: inline-block; line-height: 13px; padding: 12px 48px 12px 48px; font-size: 13px; color: #90afbb; background-image: url(/images/intro-nav-button.png); background-repeat: no-repeat; background-position: right -56px; }
+.index .content .intro-nav a span { font-family: "CorbelRegular", sans-serif; font-size: 16px; padding-left: 24px; color: #c1eaf9; text-shadow: #1b2429 0 -1px 0; }
+.index .content .intro-nav a:hover { background-position: right -6px; color: #c1eaf9; }
+.index .content .intro-nav a:hover span { color: white; }
+.index .content .intro { padding-top: 30px; padding-bottom: 20px; text-align: center; }
+.index .content .intro h1 { font-weight: normal; padding-bottom: 10px; padding-right: 2px; height: 35px; }
+.index .content .intro .feature { margin-left: 38px; float: left; width: 280px; padding-top: 10px; padding-bottom: 20px; }
+.index .content .intro .feature.first { margin-left: 0; }
+.index .content .intro .feature h3 { margin: 0; padding: 0; padding-bottom: 5px; }
+.index .content .intro .feature p { margin: 0; padding: 0; }
+.index .content .intro .featured { display: block; position: relative; text-align: center; margin-left: 38px; float: left; width: 280px; height: 210px; background-repeat: no-repeat; background-position: left -206px; background-image: url(/images/intro-item-background.png); display: inline-block; }
+.index .content .intro .featured:hover { background-position: left 0; }
+.index .content .intro .featured:after { content: " "; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+.index .content .intro .featured { display: block; }
+.index .content .intro .featured.first { margin-left: 0; }
+.index .content .intro .featured .ribbon { width: 100px; height: 100px; position: absolute; overflow: hidden; left: 6px; top: 30px; }
+.index .content .intro .featured span.name { display: block; text-indent: -9000px; width: 280px; height: 210px; background-repeat: no-repeat; background-position: left top; }
+.index .content .intro .featured span.description { display: block; font-family: "CorbelRegular", sans-serif; font-size: 14px; color: #9cc1a7; margin-top: -40px; }
+.index .content .intro #moonshado span.name { background-image: url(/images/intro-item-moonshado.png); }
+.index .content .intro #pandastream span.name { background-image: url(/images/intro-item-pandastream.png); }
+.index .content .intro #redistogo span.name { background-image: url(/images/intro-item-redistogo.png); }
+.index .content .intro #dns span.name { background-image: url(/images/intro-item-dns.png); }
+.index .content .intro #performance span.name { background-image: url(/images/intro-item-performance.png); }
+.index .content .intro #search span.name { background-image: url(/images/intro-item-search.png); }
+.index .content .addons { padding-top: 40px; }
+.index .content .addons .column { width: 445px; float: left; }
+.index .content .addons .column:first-child { margin-right: 30px; }
+.index .content .addons .addon { margin-bottom: 30px; overflow: hidden; -moz-border-radius: 7px; -webkit-border-radius: 7px; background-color: #1a2f36; background-image: url(/images/addon-item-background-default.png); background-repeat: repeat-x; background-position: center top; border: 1px solid #243f47; -moz-box-shadow: 0px 0px 5px #171c1e; -webkit-box-shadow: 0px 0px 5px #171c1e; padding: 14px; position: relative; }
+.index .content .addons .addon.private_beta, .index .content .addons .addon.soon { background-image: url(/images/addon-item-background-disabled.png); background-color: #232d31; border: 1px solid #2e3b3f; }
+.index .content .addons .addon .addon-overview { padding-left: 80px; background-position: left top; background-repeat: no-repeat; }
+.index .content .addons .addon .addon-overview .name { float: left; margin: 0; padding: 0; margin-top: -3px; margin-bottom: 3px; }
+.index .content .addons .addon .addon-overview a.button { display: block; background-color: #62a141; background-image: url(/images/addon-learn-button-background.png); background-repeat: repeat-x; background-position: center 0; float: right; text-align: center; font-size: 10px; color: #223b40; text-shadow: #e1f9b5 0px 0px 3px; padding: 5px; font-weight: bold; text-transform: uppercase; -moz-border-radius: 3px; -webkit-border-radius: 3px; -moz-box-shadow: 0px 0px 5px #071114; -webkit-box-shadow: 0px 0px 5px #071114; }
+.index .content .addons .addon .addon-overview a.button:hover { background-position: center -30px; text-shadow: #f3ffcb 0px 0px 4px; background-color: #80be54; }
+.index .content .addons .addon .addon-overview .addon-summary, .index .content .addons .addon .addon-overview .addon-options, .index .content .addons .addon .addon-overview .addon-options-summary { clear: both; }
+.index .content .addons .addon .addon-overview .addon-summary .option .name, .index .content .addons .addon .addon-overview .addon-options .option .name, .index .content .addons .addon .addon-overview .addon-options-summary .option .name { margin: 0; padding: 0; line-height: 18px; }
+.index .content .addons .addon .addon-overview .addon-summary p.summary, .index .content .addons .addon .addon-overview .addon-options p.summary, .index .content .addons .addon .addon-overview .addon-options-summary p.summary { line-height: 18px; padding-top: 2px; }
+.index .content .addons .addon .addon-overview .addon-summary p.price, .index .content .addons .addon .addon-overview .addon-summary .option .price, .index .content .addons .addon .addon-overview .addon-options p.price, .index .content .addons .addon .addon-overview .addon-options .option .price, .index .content .addons .addon .addon-overview .addon-options-summary p.price, .index .content .addons .addon .addon-overview .addon-options-summary .option .price { float: right; margin-left: 15px; text-align: right; width: 120px; text-transform: uppercase; margin: 0; padding: 0; font-size: 18px; }
+.index .content .addons .addon .addon-overview .addon-summary p.price small, .index .content .addons .addon .addon-overview .addon-summary .option .price small, .index .content .addons .addon .addon-overview .addon-options p.price small, .index .content .addons .addon .addon-overview .addon-options .option .price small, .index .content .addons .addon .addon-overview .addon-options-summary p.price small, .index .content .addons .addon .addon-overview .addon-options-summary .option .price small { font-family: "HybreaLight", sans-serif; letter-spacing: 1px; vertical-align: top; margin-top: 0; display: inline-block; }
+.index .content .addons .addon .addon-overview .addon-summary p.price span.unit, .index .content .addons .addon .addon-overview .addon-summary .option .price span.unit, .index .content .addons .addon .addon-overview .addon-options p.price span.unit, .index .content .addons .addon .addon-overview .addon-options .option .price span.unit, .index .content .addons .addon .addon-overview .addon-options-summary p.price span.unit, .index .content .addons .addon .addon-overview .addon-options-summary .option .price span.unit { display: block; font-size: 9px; line-height: 12px; color: #56838a; }
+.index .content .addons .addon .addon-overview .addon-summary p.price:after, .index .content .addons .addon .addon-overview .addon-summary .option .price:after, .index .content .addons .addon .addon-overview .addon-options p.price:after, .index .content .addons .addon .addon-overview .addon-options .option .price:after, .index .content .addons .addon .addon-overview .addon-options-summary p.price:after, .index .content .addons .addon .addon-overview .addon-options-summary .option .price:after { display: inline-block; }
+.index .content .addons .addon .addon-overview .addon-summary p.price:after:after, .index .content .addons .addon .addon-overview .addon-summary .option .price:after:after, .index .content .addons .addon .addon-overview .addon-options p.price:after:after, .index .content .addons .addon .addon-overview .addon-options .option .price:after:after, .index .content .addons .addon .addon-overview .addon-options-summary p.price:after:after, .index .content .addons .addon .addon-overview .addon-options-summary .option .price:after:after { content: " "; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+.index .content .addons .addon .addon-overview .addon-summary p.price:after, .index .content .addons .addon .addon-overview .addon-summary .option .price:after, .index .content .addons .addon .addon-overview .addon-options p.price:after, .index .content .addons .addon .addon-overview .addon-options .option .price:after, .index .content .addons .addon .addon-overview .addon-options-summary p.price:after, .index .content .addons .addon .addon-overview .addon-options-summary .option .price:after { display: block; }
+.index .content .addons .addon .addon-overview .addon-summary .option, .index .content .addons .addon .addon-overview .addon-options .option, .index .content .addons .addon .addon-overview .addon-options-summary .option { padding-bottom: 8px; overflow: hidden; height: 30px; }
+.index .content .addons .addon .addon-overview .addon-summary .option h3, .index .content .addons .addon .addon-overview .addon-options .option h3, .index .content .addons .addon .addon-overview .addon-options-summary .option h3 { font-size: 16px; margin: 0; padding: 0; }
+.index .content .addons .addon .addon-overview .addon-summary .option:last-child, .index .content .addons .addon .addon-overview .addon-options .option:last-child, .index .content .addons .addon .addon-overview .addon-options-summary .option:last-child { padding-bottom: 0; }
+.index .content .addons .addon .addon-overview .addon-summary .option.private_beta .price, .index .content .addons .addon .addon-overview .addon-summary .option.public_beta .price, .index .content .addons .addon .addon-overview .addon-options .option.private_beta .price, .index .content .addons .addon .addon-overview .addon-options .option.public_beta .price, .index .content .addons .addon .addon-overview .addon-options-summary .option.private_beta .price, .index .content .addons .addon .addon-overview .addon-options-summary .option.public_beta .price { font-size: 13px; line-height: 13px; padding-top: 4px; }
+.index .content .addons .addon .addon-overview .addon-summary p.price { margin-top: 3px; }
+
+.show .content { background-image: url(/images/addon-content-background.png); background-repeat: repeat-x; background-position: left top; width: 100%; min-width: 930px; display: inline-block; padding-bottom: 60px; }
+.show .content:after { content: " "; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+.show .content { display: block; }
+.show .addon-detail-wrapper { width: 70%; float: left; }
+.show .addon-detail { color: #a9c1cc; float: right; width: 630px; padding-top: 20px; padding-right: 30px; padding-left: 30px; }
+.show .addon-detail .addon-header { position: relative; display: inline-block; padding-bottom: 10px; }
+.show .addon-detail .addon-header .ribbon { width: 100px; height: 100px; position: absolute; overflow: hidden; left: 0px; top: 0px; }
+.show .addon-detail .addon-header .addon-overview { min-height: 70px; background-repeat: no-repeat; background-position: left center; padding-top: 5px; padding-left: 80px; }
+.show .addon-detail .addon-header:after { content: " "; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+.show .addon-detail .addon-header { display: block; }
+.show .addon-detail .addon-header h1, .show .addon-detail .addon-header p { margin: 0; padding: 0; }
+.show .addon-detail .addon-header p { color: #88aebf; }
+.show .addon-detail .addon-header ul.addon-links { float: right; width: 200px; text-align: right; list-style-type: none; line-height: 24px; font-size: 13px; padding-top: 5px; color: #88aebf; }
+.show .addon-detail .addon-header ul.addon-links a { background-image: url(/images/addon-outlink.png); background-repeat: no-repeat; background-position: right 0; padding-right: 16px; color: #88aebf; padding-right: 20px; }
+.show .addon-detail .addon-header ul.addon-links a:hover { color: #cff0ff; background-position: right -16px; }
+.show .addon-detail .addon-intro { margin: 0; padding: 0 0 20px 15px; font-size: 13px; line-height: 20px; }
+.show .addon-detail .addon-intro a { background-image: url(/images/addon-outlink.png); background-repeat: no-repeat; background-position: right 0; padding-right: 16px; color: #88aebf; }
+.show .addon-detail .addon-intro a:hover { color: #cff0ff; background-position: right -16px; }
+.show .addon-detail .addon-options .option { -moz-border-radius: 7px; -webkit-border-radius: 7px; background-color: #1a2f36; background-image: url(/images/addon-item-background-default.png); background-repeat: repeat-x; background-position: center top; border: 1px solid #243f47; -moz-box-shadow: 0px 0px 5px #171c1e; -webkit-box-shadow: 0px 0px 5px #171c1e; padding: 14px; margin-bottom: 18px; display: inline-block; }
+.show .addon-detail .addon-options .option.private_beta, .show .addon-detail .addon-options .option.soon { background-image: url(/images/addon-item-background-disabled.png); background-color: #232d31; border: 1px solid #2e3b3f; }
+.show .addon-detail .addon-options .option:after { content: " "; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+.show .addon-detail .addon-options .option { display: block; }
+.show .addon-detail .addon-options .option .add-code { font-family: monaco, monotype; font-size: 11px; background-color: #1b272e; color: #889fa8; background-image: url(/images/addon-code-prompt.png); background-repeat: no-repeat; background-position: left center; padding: 5px 10px 5px 23px; -moz-border-radius: 5px; -webkit-border-radius: 5px; display: inline-block; margin-top: 10px; margin-right: 8px; }
+.show .addon-detail .addon-options .option .add { float: right; text-align: right; margin-left: 15px; }
+.show .addon-detail .addon-options .option .add .add-button { text-align: right; margin: 0; padding: 0; height: 50px; position: relative; vertical-align: middle; }
+.show .addon-detail .addon-options .option .add .add-button .button, .show .addon-detail .addon-options .option .add .add-button .price { display: block; }
+.show .addon-detail .addon-options .option .add .add-button .price { text-transform: uppercase; margin: 0; padding: 0; font-size: 18px; padding-right: 161px; padding-top: 9px; }
+.show .addon-detail .addon-options .option .add .add-button .price.free { padding-top: 15px; }
+.show .addon-detail .addon-options .option .add .add-button .price small { font-family: "HybreaLight", sans-serif; letter-spacing: 1px; display: inline-block; vertical-align: top; padding-right: 1px; margin-top: -1px; }
+.show .addon-detail .addon-options .option .add .add-button .price span.unit { display: block; font-size: 9px; line-height: 12px; color: #56838a; }
+.show .addon-detail .addon-options .option .add .add-button .button { position: absolute; top: 0; right: 0; background-color: transparent; background-image: url(/images/addon-add-button.png); background-repeat: no-repeat; background-position: right -1px; width: 160px; height: 53px; line-height: 48px; padding-right: 2px; text-align: center; font-weight: normal; font-family: "CorbelRegular", sans-serif; font-size: 21px; color: #1a2f36; cursor: pointer; text-shadow: #d3fb8e 0px 0px 3px; }
+.show .addon-detail .addon-options .option .add .add-button .button:hover { background-position: right -53px; color: #1e3b4a; text-shadow: #eafcb4 0px 0px 3px; }
+.show .addon-detail .addon-options .option .add.contact .add-button .button { font-size: 18px; background-image: url(/images/addon-contact-button3.png); color: #00060f; text-shadow: #00bdff 0px 0px 3px; }
+.show .addon-detail .addon-options .option .add.contact.disabled .button:hover { cursor: pointer; }
+.show .addon-detail .addon-options .option .add.disabled .add-button .price { color: #949797; }
+.show .addon-detail .addon-options .option .add.disabled .add-button .price span { color: #606161; }
+.show .addon-detail .addon-options .option .add.disabled .add-button .button { background-position: right -108px; text-shadow: #747c7c 0px 0px 2px; color: #0c0e0e; }
+.show .addon-detail .addon-options .option .add.disabled .add-button .button:hover { color: #0c0e0e; background-position: right -108px; text-shadow: #747c7c 0px 0px 2px; cursor: default; }
+.show .addon-detail .addon-options .option .add.disabled .add-message { background-color: #383f3f; border: 1px solid #747c7c; -moz-border-radius: 5px; -webkit-border-radius: 5px; -moz-box-shadow: 0px 0px 4px #1a2123; -webkit-box-shadow: 0px 0px 4px #1a2123; font-size: 13px; text-align: center; padding: 10px; width: 215px; color: #a7adad; margin-top: 10px; margin-right: 0; margin-bottom: 0; display: inline-block; position: relative; }
+.show .addon-detail .addon-options .option .add.disabled .add-message .add-message-arrow { position: absolute; display: block; background-image: url(/images/addon-disabled-message-arrow.png); background-repeat: no-repeat; background-position: center top; width: 22px; height: 20px; right: 68px; top: -15px; }
+.show .addon-detail .addon-options .option .overview h2, .show .addon-detail .addon-options .option .overview p { margin: 0; padding: 0; }
+.show .addon-detail .addon-options .option .overview h2 { margin-bottom: 1px; }
+.show .addon-detail .addon-options .option .overview p { color: #88aebf; }
+.show .addon-detail .addon-readme { padding-left: 15px; padding-right: 20px; font-size: 13px; line-height: 20px; }
+.show .addon-detail .addon-readme a { background-image: url(/images/addon-outlink.png); background-repeat: no-repeat; background-position: right 0; padding-right: 16px; color: #88aebf; }
+.show .addon-detail .addon-readme a:hover { color: #cff0ff; background-position: right -16px; }
+.show .addon-detail .addon-readme li a { padding-right: 18px; }
+.show .sidebar-wrapper { float: right; width: 30%; background-image: url(/images/addon-detail-sidebar-background.png); background-repeat: repeat-x; }
+.show .sidebar { width: 200px; float: left; padding-left: 30px; padding-top: 20px; min-height: 500px; display: inline-block; }
+.show .sidebar:after { content: " "; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+.show .sidebar { display: block; }
+.show .sidebar h3 { margin-bottom: 10px; text-transform: uppercase; font-size: 10px; color: #88aebf; }
+.show .sidebar .addon { line-height: 40px; }
+.show .sidebar .addon .name { font-size: 20px; vertical-align: middle; }
+.show .sidebar .addon .addon-icon { margin-right: 8px; width: 40px; height: 40px; vertical-align: middle; }
+
+#preview-notice { background: #111517; border-bottom: 2px solid #282b2c; padding: 24px 0; width: 100%; }
+#preview-notice .preview-notice-wrapper { -moz-border-radius: 5px; -webkit-border-radius: 5px; -o-border-radius: 5px; -ms-border-radius: 5px; -khtml-border-radius: 5px; border-radius: 5px; -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px inset; -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px inset; -o-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px inset; box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px inset; background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #364d53), color-stop(100%, #213034)); background-image: -moz-linear-gradient(top, #364d53 0%, #213034 100%); background-image: linear-gradient(top, #364d53 0%, #213034 100%); margin: 0 auto; padding: 12px 24px; display: inline-block; width: 580px; }
+#preview-notice .preview-notice-wrapper:after { content: " "; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+#preview-notice .preview-notice-wrapper { display: block; }
+#preview-notice .preview-notice-wrapper .preview-notice-message { color: #cbeffd; float: left; font-size: 13px; margin: 9px 0 0 0; }
+#preview-notice .preview-notice-wrapper .preview-notice-action { float: right; display: inline-block; }
+#preview-notice .preview-notice-wrapper .preview-notice-action:after { content: " "; display: block; height: 0; clear: both; overflow: hidden; visibility: hidden; }
+#preview-notice .preview-notice-wrapper .preview-notice-action { display: block; }
+#preview-notice .preview-notice-wrapper .preview-notice-action form { float: left; margin: 0 12px 0 0; }
+#preview-notice .preview-notice-wrapper .preview-notice-action form:last-child { margin: 0; }
+#preview-notice .preview-notice-wrapper .preview-notice-action form input { -moz-background-clip: padding; -webkit-background-clip: padding; -o-background-clip: padding; -ms-background-clip: padding; -khtml-background-clip: padding; background-clip: padding; border: 1px solid #192528; -moz-border-radius: 3px; -webkit-border-radius: 3px; -o-border-radius: 3px; -ms-border-radius: 3px; -khtml-border-radius: 3px; border-radius: 3px; -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0; -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0; -o-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0; box-shadow: rgba(255, 255, 255, 0.1) 0 1px 1px 0; display: block; font-family: "Helvetica Neue", Helvetica, Geneva, Arial, sans-serif; font-size: 12px; font-weight: bold; -webkit-font-smoothing: antialiased; padding: 6px 18px; }
+#preview-notice .preview-notice-wrapper .preview-notice-action form input.edit { color: #513f14; background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #f8ce6d), color-stop(100%, #e0b145)); background-image: -moz-linear-gradient(top, #f8ce6d 0%, #e0b145 100%); background-image: linear-gradient(top, #f8ce6d 0%, #e0b145 100%); text-shadow: 0 1px 1px #eacd89; }
+#preview-notice .preview-notice-wrapper .preview-notice-action form input.save { color: #283c26; background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #beda73), color-stop(100%, #81b644)); background-image: -moz-linear-gradient(top, #beda73 0%, #81b644 100%); background-image: linear-gradient(top, #beda73 0%, #81b644 100%); text-shadow: 0 1px 1px #beda73; }
