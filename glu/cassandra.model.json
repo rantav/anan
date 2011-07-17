@@ -1,47 +1,20 @@
 {
-  "agentTags": {"agent-1": ["osx"]},
     "entries": [{
-      "agent": "agent-1",
+      "agent": "gluagent0.anan.io",
       "initParameters": {
-        "port": 9000,
-        "skeleton": "file:///tmp/apache-cassandra-0.8.1-bin.tar.gz",
-        "webapps": [
-        {
-          "contextPath": "/cp1",
-          "monitor": "/monitor",
-          "war": "http://localhost:8080/glu/repository/wars/org.linkedin.glu.samples.sample-webapp-3.0.0.war"
-        },
-        {
-          "contextPath": "/cp2",
-          "monitor": "/monitor",
-          "war": "http://localhost:8080/glu/repository/wars/org.linkedin.glu.samples.sample-webapp-3.0.0.war"
-        }
-        ]
+        "skeleton": "http://www.apache.org/dist/cassandra/0.8.1/apache-cassandra-0.8.1-bin.tar.gz",
       },
       "metadata": {
-        "cluster": "c1",
-        "container": {"name": "sample"},
-        "product": "product1",
-        "version": "1.0.0"
+        "cluster": "Cassandra Test",
+        "container": {"name": "cassandra"},
+        "product": "cassandra",
+        "version": "0.8.1"
       },
       "mountPoint": "/cassandra",
-      "script": "file:///Users/ran/dev/anan/glu/CassandraGluScript.groovy",
+      "script": "https://raw.github.com/rantav/anan/master/glu/CassandraGluScript.groovy",
       "tags": [
-        "frontend",
-      "webapp"
+        "cassandra"
         ]
     }],
-    "fabric": "glu-dev-1",
-    "id": "7267f38614dd9d22e5e28a975988b991c0c08f85",
-    "metadata": {"product": {
-      "product1": {
-        "name": "product1",
-        "version": "1.0.0"
-      },
-      "product2": {
-        "name": "product2",
-        "version": "2.0.0"
-      }
-    }
-  }
+    "fabric": "glu-dev-1"
 }
