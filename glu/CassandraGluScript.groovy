@@ -1,20 +1,5 @@
-/*
- * Copyright (c) 2011 Yan Pujante
- *
- * Licensed under the Apache License, Version 2.0 (the "License"); you may not
- * use this file except in compliance with the License. You may obtain a copy of
- * the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
- * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
- * License for the specific language governing permissions and limitations under
- * the License.
- */
-
 import org.linkedin.glu.agent.api.ShellExecException
+import org.linkedin.util.io.resource.Resource
 
 /**
  * The purpose of this glu script is to deploy (in an atomic fashion), a jetty container and some
@@ -95,13 +80,13 @@ class JettyGluScript
   // ZooKeeper
 
   // this 3.0.0 is replaced at build time
-  def version = '3.0.0'
+  def version = '0.8.1'
   def serverRoot
   def serverCmd
   def logsDir
   def serverLog
-  def gcLog
   def pid
+  def pidFile
   def port
   def webapps
 
@@ -120,30 +105,33 @@ class JettyGluScript
   def install = {
     log.info "Installing..."
 
-    // fetching/installing jetty
-    def jettySkeleton = shell.fetch(params.skeleton)
-    def distribution = shell.untar(jettySkeleton)
-    shell.rmdirs(mountPoint)
-    serverRoot = shell.mv(shell.ls(distribution)[0], mountPoint)
+    serverRoot = downloadCassandra()
 
     // assigning variables
-    logsDir = serverRoot.'logs'
-    serverLog = logsDir.'start.log'
-    gcLog = logsDir.'gc.log'
-
-    // the tar ball contains some default contexts and webapps that we don't want
-    shell.rmdirs(serverRoot.'contexts')
-    shell.rmdirs(serverRoot.'webapps')
+    logsDir = '/var/log/cassandra/'
+    serverLog = logsDir + 'system.log'
 
     // make sure all bin/*.sh files are executable
     shell.ls(serverRoot.bin) {
       include(name: '*.sh')
+      include(name: 'cassandra')
+      include(name: 'cassandra-cli')
+      include(name: 'json2sstable')
+      include(name: 'nodetool')
+      include(name: 'sstable2json')
+      include(name: 'sstablekeys')
+      include(name: 'sstableloader')
     }.each { shell.chmodPlusX(it) }
 
-    // creating etc/jetty-glu.xml
-    shell.saveContent(serverRoot.'etc/jetty-glu.xml', DEFAULT_JETTY_XML)
-
     log.info "Install complete."
+  }
+
+  private Resource downloadCassandra() {
+    def cassandraSkeleton = shell.fetch(params.skeleton)
+    def distribution = shell.untar(cassandraSkeleton)
+    shell.rmdirs(mountPoint)
+    def serverRoot = shell.mv(shell.ls(distribution)[0], mountPoint)
+    return serverRoot
   }
 
   /*******************************************************
@@ -157,7 +145,7 @@ class JettyGluScript
 
   def configure = {
     log.info "Configuring..."
-
+/*
     // first we configure the server
     configureServer()
 
@@ -167,7 +155,7 @@ class JettyGluScript
     // setting up a timer to monitor the server
     timers.schedule(timer: serverMonitor,
                     repeatFrequency: params.serverMonitorFrequency ?: '15s')
-
+*/
     log.info "Configuration complete."
   }
 
@@ -176,14 +164,14 @@ class JettyGluScript
    *******************************************************/
   def start = {
     log.info "Starting..."
-
-    shell.exec("${serverCmd} start > /dev/null 2>&1 &")
-
+    pidFile = "${logsDir}/cassandra.pid"
+    shell.exec("${serverRoot}/bin/cassandra -p ${pidFile}")
     // we wait for the process to be started (should be quick)
-    shell.waitFor(timeout: '5s', heartbeat: '250') {
+    shell.waitFor(timeout: '10s', heartbeat: '500') {
       pid = isProcessUp()
     }
 
+/*
     // now that the process should be up, we wait for the server to be up
     // when jetty starts, it also starts all the contexts and only then start listening on
     // the port... this will effectively wait for all the apps to be up!
@@ -205,6 +193,7 @@ class JettyGluScript
     {
       log.info "Started jetty on port ${port}."
     }
+  */
   }
 
   /*******************************************************
@@ -212,9 +201,7 @@ class JettyGluScript
    *******************************************************/
   def stop = { args ->
     log.info "Stopping..."
-
     doStop()
-
     log.info "Stopped."
   }
 
@@ -226,11 +213,11 @@ class JettyGluScript
 
   def unconfigure = {
     log.info "Unconfiguring..."
-
+/*
     timers.cancel(timer: serverMonitor)
 
     port = null
-
+*/
     log.info "Unconfiguration complete."
   }
 
@@ -248,14 +235,11 @@ class JettyGluScript
 
   // a closure called by the rest of the code but not by the agent directly
   private def doStop = {
-    if(isProcessDown())
-    {
-      log.info "Server already down."
-    }
-    else
-    {
+    if(isProcessDown()) {
+      log.info "Cassandra is already down."
+    } else {
       // invoke the stop command
-      shell.exec("${serverCmd} stop")
+      shell.exec("kill -9 ${pid}")
 
       // we wait for the process to be stopped
       shell.waitFor(timeout: params.stopTimeout, heartbeat: '1s') { duration ->
@@ -263,7 +247,6 @@ class JettyGluScript
         isProcessDown()
       }
     }
-
     pid = null
   }
 
@@ -273,19 +256,17 @@ class JettyGluScript
   // defined at the top of this file), then use a closure otherwise the update won't make it to
   // ZooKeeper.
 
-  private Integer isProcessUp()
-  {
-    try
-    {
-      def output = shell.exec("${serverCmd} check")
-      def matcher = output =~ /Jetty running pid=([0-9]+)/
-      if(matcher)
-        return matcher[0][1] as int
-      else
+  private Integer isProcessUp() {
+    try {
+      def output = shell.exec("${serverRoot}/bin/nodetool -h localhost ring")
+      def pid = shell.cat(pidFile)
+      if (!shell.listening('localhost', 9160)) {
+        log.info("Cassandra not yet listening on port 9160")
         return null
-    }
-    catch(ShellExecException e)
-    {
+      }
+      return pid as int
+    } catch(ShellExecException e) {
+      log.info("Not ready yet, gets an exception ${e.localizedMessage}")
       return null
     }
   }
@@ -299,8 +280,7 @@ class JettyGluScript
       return null
   }
 
-  private boolean isProcessDown()
-  {
+  private boolean isProcessDown() {
     isProcessUp() == null
   }
 
