@@ -77,6 +77,7 @@ class CassandraGluScript {
 
   def configure = {
     log.info "Configuring..."
+    shell.mkdirs(logsDir)
     log.info "Configuration complete."
   }
 
