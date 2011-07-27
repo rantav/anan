@@ -6,33 +6,13 @@ class CassandraGluScript {
     agent(version: '1.6.0')
   }
 
-  /*******************************************************
-   * Script state
-   *******************************************************/
-
-  // the following fields represent the state of the script and will be exported to ZooKeeper
-  // automatically thus will be available in the console or any other program 'listening' to
-  // ZooKeeper
-
-  // this 3.0.0 is replaced at build time
+  // TODO: the version needs to be retained from teh tar.
   def version = '0.8.1'
   def serverRoot
   def logsDir
   def serverLog
   def pid
   def pidFile
-
-  /*******************************************************
-   * install phase
-   *******************************************************/
-
-  // * log, shell and mountPoint are 3 'variables' available in any glu script
-  // * note how we use 'mountPoint' for the jetty installation. It is done this way because the
-  // agent automatically cleans up whatever goes in mountPoint on uninstall. Also mountPoint is
-  // guaranteed to be unique so it is a natural location to install the software which allows
-  // to install more than one instance of it on a given machine/agent.
-  // * every file system call (going through shell.xx methods) is always relative to wherever
-  // the agent apps folder was configured
 
   def install = {
     log.info "Installing..."
@@ -66,24 +46,12 @@ class CassandraGluScript {
     return serverRoot
   }
 
-  /*******************************************************
-   * configure phase
-   *******************************************************/
-
-  // in this phase we set up a timer which will monitor the server. The reason why it is setup
-  // in the configure phase rather than the start phase is because this way we can both detect
-  // when the server goes down and up! (for example if you kill it on the command line and
-  // restart it without going through glu, the monitor will detect it)
-
   def configure = {
     log.info "Configuring..."
     shell.mkdirs(logsDir)
     log.info "Configuration complete."
   }
 
-  /*******************************************************
-   * start phase
-   *******************************************************/
   def start = {
     log.info "Starting..."
     pidFile = "${logsDir}/cassandra.pid"
@@ -94,33 +62,17 @@ class CassandraGluScript {
     }
   }
 
-  /*******************************************************
-   * stop phase
-   *******************************************************/
   def stop = { args ->
     log.info "Stopping..."
     doStop()
     log.info "Stopped."
   }
 
-  /*******************************************************
-   * unconfigure phase
-   *******************************************************/
-
-  // we remove the timer set in the configure phase
-
   def unconfigure = {
     log.info "Unconfiguring..."
+    // nothing
     log.info "Unconfiguration complete."
   }
-
-  /*******************************************************
-   * uninstall phase
-   *******************************************************/
-
-  // note that since it does nothing, it can simply be removed. It is there just to enforce the
-  // fact that it really does nothing. Indeed the agent will automatically clean up after this
-  // phase and delete whatever was installed under 'mountPoint'
 
   def uninstall = {
     // nothing
@@ -167,5 +119,4 @@ class CassandraGluScript {
   private boolean isProcessDown() {
     isProcessUp() == null
   }
-
 }
