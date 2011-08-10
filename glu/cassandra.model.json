@@ -2,7 +2,7 @@
     "entries": [{
       "agent": "gluagent0.anan.io",
       "initParameters": {
-        "skeleton": "http://www.apache.org/dist/cassandra/0.8.1/apache-cassandra-0.8.1-bin.tar.gz",
+        "skeleton": "http://archive.apache.org/dist/cassandra/0.8.2/apache-cassandra-0.8.2-bin.tar.gz",
       },
       "metadata": {
         "cluster": "Cassandra Test",
